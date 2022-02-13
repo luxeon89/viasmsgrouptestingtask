@@ -13,6 +13,10 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('/', function ()  {
+    return view('home');
 });
+
+$router->get('/register',  'RegisterUserController@process');
+
+$router->post('/register/success', 'RegisterUserController@success');
